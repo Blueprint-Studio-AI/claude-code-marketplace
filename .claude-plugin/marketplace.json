@@ -43,7 +43,7 @@
         "path": "plugin/plugins/conch"
       },
       "description": "A voice loop for Claude Code. Your sessions announce finished turns out loud, the mic opens, and you talk your next prompt straight back into the right session \u2014 plus tools to see and steer every session from one place.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "Tyler Stupart"
       },
