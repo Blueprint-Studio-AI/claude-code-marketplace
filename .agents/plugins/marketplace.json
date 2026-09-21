@@ -1,0 +1,20 @@
+{
+  "name": "blueprint-studio-marketplace",
+  "interface": {
+    "displayName": "Blueprint Studio"
+  },
+  "plugins": [
+    {
+      "name": "blueprint-studio",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Blueprint-Studio-AI/claude-code-asset-generator.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
