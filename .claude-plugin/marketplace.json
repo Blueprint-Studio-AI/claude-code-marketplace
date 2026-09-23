@@ -15,8 +15,8 @@
         "source": "github",
         "repo": "Blueprint-Studio-AI/claude-code-asset-generator"
       },
-      "description": "Generate AI assets, manage brands, invite team members, and customize styles \u2014 directly from Claude Code.",
-      "version": "1.0.0",
+      "description": "Official brand context, versioned logos, Styles, generation and editing tools, with optional workflows.",
+      "version": "2.0.0",
       "author": {
         "name": "Blueprint Studio"
       },

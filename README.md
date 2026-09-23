@@ -1,6 +1,6 @@
-# Blueprint Studio — Claude Code Marketplace
+# Blueprint Studio Marketplace
 
-Official plugin marketplace for [Blueprint Studio](https://blueprintstudio.ai) Claude Code plugins.
+Official plugin marketplace for [Blueprint Studio](https://blueprintstudio.ai). The existing repository URL is retained for compatibility.
 
 ## Installation
 
@@ -36,3 +36,22 @@ conch setup
 
 Then `/plugin install conch@blueprint-studio-marketplace`. Without the CLI the
 plugin's tools will report that conch is not installed.
+
+
+## Codex
+
+Install Blueprint Studio for Codex:
+
+```bash
+codex plugin marketplace add https://github.com/Blueprint-Studio-AI/claude-code-marketplace.git
+codex plugin add blueprint-studio@blueprint-studio-marketplace
+codex mcp login asset-generator
+```
+
+Authorize your Blueprint account, then use `list_brands` and pass the intended `brandId` on each call. Existing workspace-only authorizations need one renewed login for account-wide access; a separate API key is not required. Open a fresh agent thread to load new tools and skills. This installs the same Blueprint package used by Claude Code, not a separate client-specific plugin. The Codex catalog currently includes Blueprint Studio only; the existing Claude Code conch entry is preserved.
+
+The public package contains optional workflow guidance and a remote MCP URL. Brand files and permission-scoped workspace data stay in their existing services. Installing a plugin does not make private repositories or project tasks accessible. Public app-directory approval is a separate process.
+
+## Maintain one catalog
+
+`.claude-plugin/marketplace.json` is the source catalog. After changing the Blueprint entry, run `node scripts/sync-codex-marketplace.mjs` and verify with `node scripts/sync-codex-marketplace.mjs --check`. The generated `.agents/plugins/marketplace.json` is the Codex-compatible projection. Keep the plugin name `blueprint-studio` and historical URLs stable to preserve existing installs.
