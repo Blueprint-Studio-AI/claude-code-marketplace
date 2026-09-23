@@ -40,7 +40,7 @@ plugin's tools will report that conch is not installed.
 
 ## Codex
 
-After the Blueprint Studio v2 plugin release is merged:
+Install Blueprint Studio for Codex:
 
 ```bash
 codex plugin marketplace add https://github.com/Blueprint-Studio-AI/claude-code-marketplace.git
@@ -48,7 +48,7 @@ codex plugin add blueprint-studio@blueprint-studio-marketplace
 codex mcp login asset-generator
 ```
 
-Choose the intended organization during authorization. Restart or open a fresh agent thread to load new tools and skills. This installs the same Blueprint package used by Claude Code, not a separate client-specific plugin. The Codex catalog currently includes Blueprint Studio only; the existing Claude Code conch entry is preserved.
+Authorize your Blueprint account, then use `list_brands` and pass the intended `brandId` on each call. Existing workspace-only authorizations need one renewed login for account-wide access; a separate API key is not required. Open a fresh agent thread to load new tools and skills. This installs the same Blueprint package used by Claude Code, not a separate client-specific plugin. The Codex catalog currently includes Blueprint Studio only; the existing Claude Code conch entry is preserved.
 
 The public package contains optional workflow guidance and a remote MCP URL. Brand files and permission-scoped workspace data stay in their existing services. Installing a plugin does not make private repositories or project tasks accessible. Public app-directory approval is a separate process.
 
