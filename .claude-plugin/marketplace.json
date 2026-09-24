@@ -16,5 +16,8 @@
         "repo": "Blueprint-Studio-AI/claude-code-asset-generator"
       }
     }
-  ]
+  ],
+  "renames": {
+    "conch": null
+  }
 }
