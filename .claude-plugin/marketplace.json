@@ -15,33 +15,6 @@
         "source": "github",
         "repo": "Blueprint-Studio-AI/claude-code-asset-generator"
       }
-    },
-    {
-      "name": "conch",
-      "displayName": "conch",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/stupart/conch.git",
-        "path": "plugin/plugins/conch"
-      },
-      "description": "A voice loop for Claude Code. Your sessions announce finished turns out loud, the mic opens, and you talk your next prompt straight back into the right session \u2014 plus tools to see and steer every session from one place.",
-      "version": "0.2.1",
-      "author": {
-        "name": "Tyler Stupart"
-      },
-      "homepage": "https://github.com/stupart/conch",
-      "repository": "https://github.com/stupart/conch",
-      "license": "MIT",
-      "keywords": [
-        "voice",
-        "speech-to-text",
-        "dictation",
-        "whisper",
-        "hands-free",
-        "multi-session",
-        "accessibility"
-      ],
-      "category": "productivity"
     }
   ]
 }
