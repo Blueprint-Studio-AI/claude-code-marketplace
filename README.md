@@ -23,20 +23,17 @@ That's it — Claude Code will open your browser to sign in with your Blueprint 
 | Plugin | Description |
 |--------|-------------|
 | [blueprint-studio](https://github.com/Blueprint-Studio-AI/claude-code-asset-generator) | Generate AI assets, manage brands, invite team members, and customize styles |
-| [conch](https://github.com/stupart/conch) | A voice loop for Claude Code — your sessions speak their finished turns, the mic opens, and you talk the next prompt straight back |
 
-## conch — one extra step
+## conch has moved
 
-The `conch` plugin drives a local daemon, so it needs the conch CLI installed:
+conch is now distributed from its own catalog, [stupart/conch](https://github.com/stupart/conch), and is no longer listed here. Installing from the new catalog first means you are never without it:
 
 ```bash
-brew install stupart/tap/conch
-conch setup
+/plugin marketplace add stupart/conch
+/plugin install conch@conch-plugins
 ```
 
-Then `/plugin install conch@blueprint-studio-marketplace`. Without the CLI the
-plugin's tools will report that conch is not installed.
-
+Once that works, remove the old copy with `/plugin uninstall conch@blueprint-studio-marketplace`. Claude Code 2.1.193+ retires the old enabled entry with a removal notice when this catalog refreshes; it does not automatically install the new source. Older versions may show plugin-not-found until the old installation is removed. Avoid keeping both copies enabled, which would register the conch tools twice. If you set up conch with `conch setup` / `conch install-plugin`, you already have the local `conch@conch` plugin and can skip all of this. The conch CLI (`brew install stupart/tap/conch && conch setup`) is still required.
 
 ## Codex
 
@@ -48,7 +45,7 @@ codex plugin add blueprint-studio@blueprint-studio-marketplace
 codex mcp login asset-generator
 ```
 
-Authorize your Blueprint account, then use `list_brands` and pass the intended `brandId` on each call. Existing workspace-only authorizations need one renewed login for account-wide access; a separate API key is not required. Open a fresh agent thread to load new tools and skills. This installs the same Blueprint package used by Claude Code, not a separate client-specific plugin. The Codex catalog currently includes Blueprint Studio only; the existing Claude Code conch entry is preserved.
+Authorize your Blueprint account, then use `list_brands` and pass the intended `brandId` on each call. Existing workspace-only authorizations need one renewed login for account-wide access; a separate API key is not required. Open a fresh agent thread to load new tools and skills. This installs the same Blueprint package used by Claude Code, not a separate client-specific plugin. The Codex catalog includes Blueprint Studio only.
 
 The public package contains optional workflow guidance and a remote MCP URL. Brand files and permission-scoped workspace data stay in their existing services. Installing a plugin does not make private repositories or project tasks accessible. Public app-directory approval is a separate process.
 
@@ -56,4 +53,4 @@ The public package contains optional workflow guidance and a remote MCP URL. Bra
 
 All Blueprint toolkit content, versions, licensing, and platform metadata are maintained in [the canonical toolkit repository](https://github.com/Blueprint-Studio-AI/claude-code-asset-generator). This repository only points to it. The Blueprint catalog entry intentionally omits version and duplicated metadata so releases resolve those fields from the plugin itself. You do not need to update this repository when changing skills or releasing a toolkit version.
 
-Only edit this catalog when adding/removing a plugin or changing its source. After that structural change, run `node scripts/sync-codex-marketplace.mjs` and verify with `node scripts/sync-codex-marketplace.mjs --check`. The generated `.agents/plugins/marketplace.json` is the Codex-compatible projection. Keep plugin and marketplace names and historical URLs stable. The independent Conch entry is unchanged.
+Only edit this catalog when adding/removing a plugin or changing its source. After that structural change, run `node scripts/sync-codex-marketplace.mjs` and verify with `node scripts/sync-codex-marketplace.mjs --check`. The generated `.agents/plugins/marketplace.json` is the Codex-compatible projection. Keep plugin and marketplace names and historical URLs stable.
