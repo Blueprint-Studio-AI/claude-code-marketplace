@@ -33,7 +33,7 @@ conch is now distributed from its own catalog, [stupart/conch](https://github.co
 /plugin install conch@conch-plugins
 ```
 
-Once that works, remove the old copy with `/plugin uninstall conch@blueprint-studio-marketplace`. Nothing here uninstalls it for you, and both copies enabled at once would register the conch tools twice. If you set up conch with `conch setup` / `conch install-plugin`, you already have the local `conch@conch` plugin and can skip all of this. The conch CLI (`brew install stupart/tap/conch && conch setup`) is still required.
+Once that works, remove the old copy with `/plugin uninstall conch@blueprint-studio-marketplace`. Claude Code 2.1.193+ retires the old enabled entry with a removal notice when this catalog refreshes; it does not automatically install the new source. Older versions may show plugin-not-found until the old installation is removed. Avoid keeping both copies enabled, which would register the conch tools twice. If you set up conch with `conch setup` / `conch install-plugin`, you already have the local `conch@conch` plugin and can skip all of this. The conch CLI (`brew install stupart/tap/conch && conch setup`) is still required.
 
 ## Codex
 
