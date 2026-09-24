@@ -5,13 +5,14 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const source = JSON.parse(readFileSync(resolve(root, ".claude-plugin/marketplace.json"), "utf8"));
 // Only packages with verified Codex compatibility belong in this projection.
 const plugin = source.plugins.find((entry) => entry.name === "blueprint-studio");
-if (plugin?.source?.source !== "github" || !/^[\w-]+\/[\w.-]+$/.test(plugin.source.repo)) throw new Error("Invalid Blueprint plugin source");
+// Public installs must not depend on a configured GitHub SSH identity.
+if (plugin?.source?.source !== "url" || !/^https:\/\/github\.com\/[\w-]+\/[\w.-]+\.git$/.test(plugin.source.url)) throw new Error("Invalid Blueprint plugin HTTPS source");
 const result = {
   name: source.name,
   interface: { displayName: "Blueprint Studio" },
   plugins: [{
     name: plugin.name,
-    source: { source: "url", url: `https://github.com/${plugin.source.repo}.git` },
+    source: { source: "url", url: plugin.source.url },
     policy: { installation: "AVAILABLE", authentication: "ON_INSTALL" },
     category: "Productivity"
   }]
