@@ -14,25 +14,7 @@
       "source": {
         "source": "github",
         "repo": "Blueprint-Studio-AI/claude-code-asset-generator"
-      },
-      "description": "Official brand context, versioned logos, Styles, generation and editing tools, with optional workflows.",
-      "version": "2.0.0",
-      "author": {
-        "name": "Blueprint Studio"
-      },
-      "homepage": "https://blueprintstudio.ai",
-      "repository": "https://github.com/Blueprint-Studio-AI/claude-code-asset-generator",
-      "license": "MIT",
-      "keywords": [
-        "ai",
-        "asset-generation",
-        "image-generation",
-        "brand-management",
-        "design",
-        "icons",
-        "illustrations"
-      ],
-      "category": "design"
+      }
     },
     {
       "name": "conch",

@@ -52,6 +52,8 @@ Authorize your Blueprint account, then use `list_brands` and pass the intended `
 
 The public package contains optional workflow guidance and a remote MCP URL. Brand files and permission-scoped workspace data stay in their existing services. Installing a plugin does not make private repositories or project tasks accessible. Public app-directory approval is a separate process.
 
-## Maintain one catalog
+## One toolkit source; stable install catalog
 
-`.claude-plugin/marketplace.json` is the source catalog. After changing the Blueprint entry, run `node scripts/sync-codex-marketplace.mjs` and verify with `node scripts/sync-codex-marketplace.mjs --check`. The generated `.agents/plugins/marketplace.json` is the Codex-compatible projection. Keep the plugin name `blueprint-studio` and historical URLs stable to preserve existing installs.
+All Blueprint toolkit content, versions, licensing, and platform metadata are maintained in [the canonical toolkit repository](https://github.com/Blueprint-Studio-AI/claude-code-asset-generator). This repository only points to it. The Blueprint catalog entry intentionally omits version and duplicated metadata so releases resolve those fields from the plugin itself. You do not need to update this repository when changing skills or releasing a toolkit version.
+
+Only edit this catalog when adding/removing a plugin or changing its source. After that structural change, run `node scripts/sync-codex-marketplace.mjs` and verify with `node scripts/sync-codex-marketplace.mjs --check`. The generated `.agents/plugins/marketplace.json` is the Codex-compatible projection. Keep plugin and marketplace names and historical URLs stable. The independent Conch entry is unchanged.
