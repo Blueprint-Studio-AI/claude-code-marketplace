@@ -3,10 +3,12 @@
   "repository": "Blueprint-Studio-AI/claude-code-marketplace",
   "pr": 5,
   "mergeCommit": "7edc0ab0d75f9fdad69b91961ad0a6b24621822e",
-  "status": "claimed",
+  "status": "sent",
   "claimId": "c910152d-8d8c-4f3b-8f22-b71f582a4e18",
   "claimedAt": "2026-09-24T10:41:15.768307+00:00",
   "source": "local",
   "destinationHash": "2b6175a3f9b4f2ff99a1d19eb547ca559611632e1f65b01cd807d37b6d1eae1d",
-  "textSha256": "9bb7a6c9e97ee0bebba2e58f6d81c420035529f29e70159823c53a83ec5296c2"
+  "textSha256": "9bb7a6c9e97ee0bebba2e58f6d81c420035529f29e70159823c53a83ec5296c2",
+  "sentAt": "2026-09-24T10:41:19.536145+00:00",
+  "messageId": 314
 }
